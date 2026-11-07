@@ -225,85 +225,163 @@ export function StoreProvider({ children }) {
   const getPin = () => adminPin || localStorage.getItem('samarth_admin_pin') || 'samarth2026';
 
   const addProduct = async (productData) => {
-    const res = await fetch('/api/products', {
-      method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json',
-        'x-admin-pin': getPin()
-      },
-      body: JSON.stringify(productData)
-    });
-    const data = await res.json();
+    let res;
+    try {
+      res = await fetch('/api/products', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'x-admin-pin': getPin()
+        },
+        body: JSON.stringify(productData)
+      });
+    } catch (netErr) {
+      throw new Error(`सर्व्हरशी संपर्क होऊ शकला नाही (${netErr.message})`);
+    }
+
+    const text = await res.text();
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      throw new Error(`सर्व्हर त्रुटी (${res.status}): ${text ? text.slice(0, 100) : 'अवैध प्रतिसाद'}`);
+    }
+
     if (data.success && data.product) {
       setProducts(prev => [data.product, ...prev]);
       return data.product;
     }
-    throw new Error(data.message || 'Failed to add product');
+    throw new Error(data.message || 'उत्पादन जोडता आले नाही');
   };
 
   const updateProduct = async (id, updatedData) => {
-    const res = await fetch(`/api/products/${id}`, {
-      method: 'PUT',
-      headers: { 
-        'Content-Type': 'application/json',
-        'x-admin-pin': getPin()
-      },
-      body: JSON.stringify(updatedData)
-    });
-    const data = await res.json();
+    let res;
+    try {
+      res = await fetch(`/api/products/${id}`, {
+        method: 'PUT',
+        headers: { 
+          'Content-Type': 'application/json',
+          'x-admin-pin': getPin()
+        },
+        body: JSON.stringify(updatedData)
+      });
+    } catch (netErr) {
+      throw new Error(`सर्व्हरशी संपर्क होऊ शकला नाही (${netErr.message})`);
+    }
+
+    const text = await res.text();
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      throw new Error(`सर्व्हर त्रुटी (${res.status})`);
+    }
+
     if (data.success && data.product) {
       setProducts(prev => prev.map(p => p.id === id ? data.product : p));
       return data.product;
     }
-    throw new Error(data.message || 'Failed to update product');
+    throw new Error(data.message || 'अपडेट अयशस्वी');
   };
 
   const deleteProduct = async (id) => {
-    const res = await fetch(`/api/products/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'x-admin-pin': getPin()
-      }
-    });
-    const data = await res.json();
+    let res;
+    try {
+      res = await fetch(`/api/products/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'x-admin-pin': getPin()
+        }
+      });
+    } catch (netErr) {
+      throw new Error(`सर्व्हरशी संपर्क होऊ शकला नाही (${netErr.message})`);
+    }
+
+    const text = await res.text();
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      throw new Error(`सर्व्हर त्रुटी (${res.status})`);
+    }
+
     if (data.success) {
       setProducts(prev => prev.filter(p => p.id !== id));
       return true;
     }
-    throw new Error(data.message || 'Failed to delete product');
+    throw new Error(data.message || 'हटवणे अयशस्वी');
   };
 
   const clearAllProducts = async () => {
-    const res = await fetch('/api/products-clear-all', {
-      method: 'DELETE',
-      headers: {
-        'x-admin-pin': getPin()
-      }
-    });
-    const data = await res.json();
+    let res;
+    try {
+      res = await fetch('/api/products-clear-all', {
+        method: 'DELETE',
+        headers: {
+          'x-admin-pin': getPin()
+        }
+      });
+    } catch (netErr) {
+      throw new Error(`सर्व्हरशी संपर्क होऊ शकला नाही (${netErr.message})`);
+    }
+
+    const text = await res.text();
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      throw new Error(`सर्व्हर त्रुटी (${res.status})`);
+    }
+
     if (data.success) {
       setProducts([]);
       return true;
     }
-    throw new Error(data.message || 'Failed to clear catalog');
+    throw new Error(data.message || 'कॅटलॉग रिकामा करता आला नाही');
   };
 
   // Bulk Upload and Instant Product Generation (Client Phone Gallery Ready)
   const bulkUploadAndCreate = async (formData) => {
-    const res = await fetch('/api/products/bulk-upload-create', {
-      method: 'POST',
-      headers: {
-        'x-admin-pin': getPin()
-      },
-      body: formData // contains images files + presets
-    });
-    const data = await res.json();
+    let res;
+    try {
+      res = await fetch('/api/products/bulk-upload-create', {
+        method: 'POST',
+        headers: {
+          'x-admin-pin': getPin()
+        },
+        body: formData // contains images files + presets
+      });
+    } catch (netErr) {
+      throw new Error(`इंटरनेट किंवा सर्व्हरशी संपर्क होऊ शकला नाही: ${netErr.message}`);
+    }
+
+    const text = await res.text();
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      if (res.status === 413) {
+        throw new Error('फोटोंचा आकार जास्त आहे. कृपया एका वेळी कमी (उदा. ५ ते १०) फोटो निवडा.');
+      }
+      if (res.status === 401) {
+        throw new Error('अनधिकृत: कृपया मालक PIN पुन्हा टाकून लॉगिन करा.');
+      }
+      if (res.status === 404) {
+        throw new Error('सर्व्हर API सापडले नाही (४०४). कृपया Netlify Functions सक्रिय असल्याची खात्री करा.');
+      }
+      throw new Error(`सर्व्हर त्रुटी (${res.status}): ${text ? text.slice(0, 100) : 'अपेक्षित प्रतिसाद मिळाला नाही'}`);
+    }
+
+    if (!res.ok || !data.success) {
+      throw new Error(data.message || `अपलोड अयशस्वी (${res.status})`);
+    }
+
     if (data.success && Array.isArray(data.products)) {
       setProducts(prev => [...data.products, ...prev]);
       triggerFestiveCelebration();
       return data;
     }
-    throw new Error(data.message || 'Bulk upload failed');
+    return data;
   };
 
   // Admin Verification & Session Storage

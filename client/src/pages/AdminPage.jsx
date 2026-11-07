@@ -6,6 +6,7 @@ import {
   Sparkles, Check, Home, ShieldCheck
 } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
+import { compressImageFiles } from '../utils/imageCompressor';
 
 export default function AdminPage() {
   const navigate = useNavigate();
@@ -119,9 +120,13 @@ export default function AdminPage() {
     setBulkSuccessMsg('');
 
     try {
+      // 1. Automatically compress images on the client to avoid 6MB serverless limits
+      const rawFiles = bulkFiles.map(item => item.file);
+      const compressedFiles = await compressImageFiles(rawFiles);
+
       const formData = new FormData();
-      bulkFiles.forEach(item => {
-        formData.append('images', item.file);
+      compressedFiles.forEach(file => {
+        formData.append('images', file);
       });
       formData.append('defaultCategory', bulkCategory);
       formData.append('defaultSubCategory', bulkSubCategory);
