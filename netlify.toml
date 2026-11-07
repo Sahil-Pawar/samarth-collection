@@ -1,0 +1,25 @@
+[build]
+  command = "npm run netlify-build"
+  publish = "client/dist"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Proxy /api requests to the serverless function
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/api/:splat"
+  status = 200
+
+# Proxy /uploads requests to the serverless function to serve images
+[[redirects]]
+  from = "/uploads/*"
+  to = "/.netlify/functions/api/uploads/:splat"
+  status = 200
+
+# SPA fallback for React Router (/product/:id, /admin, etc.)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
