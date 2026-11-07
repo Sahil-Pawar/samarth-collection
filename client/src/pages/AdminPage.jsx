@@ -16,6 +16,7 @@ export default function AdminPage() {
     products,
     addProduct,
     deleteProduct,
+    clearAllProducts,
     bulkUploadAndCreate,
     settings,
     saveSettings,
@@ -741,9 +742,28 @@ export default function AdminPage() {
                   onChange={(e) => setManageSearch(e.target.value)}
                   className="font-baloo w-full max-w-sm bg-[#1F1730] text-amber-100 placeholder-amber-400/40 text-xs rounded-xl px-3 py-2 border border-amber-900/60 focus:outline-none focus:border-amber-400"
                 />
-                <span className="font-baloo text-xs text-amber-400/80 font-semibold">
-                  एकूण: {products.length} कपडे
-                </span>
+                <div className="flex items-center gap-3">
+                  <span className="font-baloo text-xs text-amber-400/80 font-semibold">
+                    एकूण: {products.length} कपडे
+                  </span>
+                  {products.length > 0 && (
+                    <button
+                      onClick={async () => {
+                        if (confirm('तुम्हाला नक्की सर्व जुने कपडे आणि फोटो हटवायचे आहेत का?')) {
+                          try {
+                            await clearAllProducts();
+                            alert('सर्व फोटो यशस्वीरीत्या हटवले गेले!');
+                          } catch (e) {
+                            alert('हटवताना त्रुटी: ' + e.message);
+                          }
+                        }
+                      }}
+                      className="font-baloo text-xs bg-rose-950/70 hover:bg-rose-900 text-rose-300 border border-rose-800/60 px-3 py-1.5 rounded-xl transition"
+                    >
+                      सर्व फोटो हटवा
+                    </button>
+                  )}
+                </div>
               </div>
 
               <div className="bg-[#1A142A] rounded-2xl border border-amber-950 overflow-hidden">

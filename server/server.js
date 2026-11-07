@@ -390,6 +390,23 @@ app.delete('/api/products/:id', requireAdminAuth, (req, res) => {
   res.json({ success: true, message: 'Product deleted successfully' });
 });
 
+// Clear all products (Secured for client only)
+app.delete('/api/products-clear-all', requireAdminAuth, (req, res) => {
+  try {
+    if (fs.existsSync(UPLOADS_DIR)) {
+      const files = fs.readdirSync(UPLOADS_DIR);
+      for (const file of files) {
+        fs.unlinkSync(path.join(UPLOADS_DIR, file));
+      }
+    }
+  } catch (e) {
+    console.warn('Error clearing uploads dir:', e.message);
+  }
+
+  writeJSON(PRODUCTS_FILE, []);
+  res.json({ success: true, message: 'All products and uploaded images cleared successfully' });
+});
+
 // Reset demo catalog
 app.post('/api/products/reset-demo', (req, res) => {
   // Can reload sample data if requested

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { RefreshCw, Sparkles, ChevronDown, Check } from 'lucide-react';
+import { RefreshCw, Sparkles, ChevronDown, Check, UploadCloud, MessageCircle } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 import ProductCard from './ProductCard';
 
@@ -8,8 +8,9 @@ const LOAD_MORE_STEP = 8;
 
 export default function ProductGrid() {
   const {
-    filteredProducts, activeCategory, searchQuery,
-    setSearchQuery, setActiveCategory, setSubCategoryFilter, loading
+    products, filteredProducts, activeCategory, searchQuery,
+    setSearchQuery, setActiveCategory, setSubCategoryFilter, loading,
+    settings, isAdminLoggedIn, setIsAdminOpen
   } = useStore();
 
   const [visibleCount, setVisibleCount] = useState(INITIAL_BATCH_SIZE);
@@ -75,8 +76,48 @@ export default function ProductGrid() {
             </div>
           ))}
         </div>
+      ) : products.length === 0 ? (
+        /* Empty Catalog - Waiting for Client to Upload First Batch */
+        <div className="bg-[#161224] rounded-3xl border border-amber-500/30 p-8 sm:p-12 text-center max-w-xl mx-auto space-y-5 shadow-2xl">
+          <div className="w-18 h-18 rounded-full bg-amber-950/60 border border-amber-500/40 flex items-center justify-center text-4xl mx-auto shadow-inner">
+            🪔
+          </div>
+          <div>
+            <h3 className="font-rozha text-2xl sm:text-3xl rangoli-gold-text">
+              समर्थ कलेक्शन • आडगाव  रेपाळ
+            </h3>
+            <p className="font-tiro text-sm text-amber-300/90 mt-1">
+              प्रो. पप्पू  बागूल (९२६०४३९१४३)
+            </p>
+            <p className="font-baloo text-xs sm:text-sm text-amber-200/80 leading-relaxed mt-3 max-w-md mx-auto">
+              दिवाळी सणाचा नवीन व दर्जेदार वस्त्र संग्रह लवकरच येथे थेट उपलब्ध होत आहे! साड्या, मुलांचे कपडे व पुरुषांचे कुर्ते पाहण्यासाठी व ऑर्डर करण्यासाठी खालील बटणावरून थेट पप्पू  बागूल यांच्याशी संपर्क साधा.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+            <a
+              href={`https://wa.me/${(settings.whatsappNumber || '+919260439143').replace(/[^0-9]/g, '')}?text=${encodeURIComponent('नमस्कार! समर्थ कलेक्शन, आडगाव  रेपाळ (पप्पू  बागूल) - दिवाळी कपड्यांबद्दल माहिती हवी आहे.')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-baloo w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold py-3 px-6 rounded-2xl flex items-center justify-center gap-2 shadow-lg transition"
+            >
+              <MessageCircle className="w-4 h-4 fill-white" />
+              <span>पप्पू  बागूल यांना व्हॉट्सअॅप करा</span>
+            </a>
+
+            {isAdminLoggedIn && (
+              <button
+                onClick={() => setIsAdminOpen(true)}
+                className="font-baloo w-full sm:w-auto bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-bold py-3 px-6 rounded-2xl flex items-center justify-center gap-2 shadow-lg transition"
+              >
+                <UploadCloud className="w-4 h-4" />
+                <span>गॅलरीतून फोटो अपलोड करा</span>
+              </button>
+            )}
+          </div>
+        </div>
       ) : filteredProducts.length === 0 ? (
-        /* Empty State */
+        /* Empty Filter Search State */
         <div className="bg-[#161224] rounded-3xl border border-amber-950/80 p-8 sm:p-12 text-center max-w-lg mx-auto space-y-4">
           <div className="w-16 h-16 rounded-full bg-amber-950/50 border border-amber-500/20 flex items-center justify-center text-3xl mx-auto">🪔</div>
           <h3 className="font-tiro text-lg font-bold text-amber-100">कोणताही पोशाख मिळाला नाही</h3>

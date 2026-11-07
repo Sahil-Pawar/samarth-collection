@@ -273,6 +273,21 @@ export function StoreProvider({ children }) {
     throw new Error(data.message || 'Failed to delete product');
   };
 
+  const clearAllProducts = async () => {
+    const res = await fetch('/api/products-clear-all', {
+      method: 'DELETE',
+      headers: {
+        'x-admin-pin': getPin()
+      }
+    });
+    const data = await res.json();
+    if (data.success) {
+      setProducts([]);
+      return true;
+    }
+    throw new Error(data.message || 'Failed to clear catalog');
+  };
+
   // Bulk Upload and Instant Product Generation (Client Phone Gallery Ready)
   const bulkUploadAndCreate = async (formData) => {
     const res = await fetch('/api/products/bulk-upload-create', {
@@ -442,6 +457,7 @@ export function StoreProvider({ children }) {
       addProduct,
       updateProduct,
       deleteProduct,
+      clearAllProducts,
       bulkUploadAndCreate,
       verifyAdmin,
       logoutAdmin,
