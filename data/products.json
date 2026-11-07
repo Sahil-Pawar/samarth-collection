@@ -1,0 +1,395 @@
+[
+  {
+    "id": "prod_1794030130288_0_845",
+    "title": "शाही फेस्टिव्ह साडी - Gemini Generated Image Rttimvrttimvrtti",
+    "category": "sarees",
+    "subCategory": "बनारसी सिल्क",
+    "price": 1999,
+    "originalPrice": 3499,
+    "discountPercent": 43,
+    "isDiwaliSpecial": true,
+    "tag": "Diwali Dhamaka",
+    "rating": 4.8,
+    "reviewsCount": 15,
+    "images": [
+      "/uploads/Gemini_Generated_Image_rttimvrttimvrtti-1794030130196-551556.png"
+    ],
+    "description": "Stunning sarees outfit perfect for Diwali celebrations. High-definition fabric, elegant silhouette, and festive sheen.",
+    "sizes": [
+      "Free Size (5.5m + Blouse)"
+    ],
+    "colors": [
+      "Festive Festive"
+    ],
+    "fabric": "Silk Blend",
+    "stockStatus": "In Stock",
+    "featured": true,
+    "createdAt": "2026-11-07T05:42:10.288Z"
+  },
+  {
+    "id": "prod_saree_01",
+    "title": "Royal Crimson Banarasi Zari Silk Saree",
+    "category": "sarees",
+    "subCategory": "Banarasi Silk",
+    "price": 2899,
+    "originalPrice": 4999,
+    "discountPercent": 42,
+    "isDiwaliSpecial": true,
+    "tag": "Diwali Bestseller",
+    "rating": 4.9,
+    "reviewsCount": 68,
+    "images": [
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=900&q=80"
+    ],
+    "description": "Exquisite pure Banarasi silk saree in royal crimson with intricate golden zari floral jaal weaving across the body. Features an opulent heavy pallu and contrasting rich border. Perfect for Diwali pooja, weddings, and festive galas.",
+    "sizes": [
+      "Free Size (5.5m + 0.8m Blouse)"
+    ],
+    "colors": [
+      "Crimson Red",
+      "Royal Gold"
+    ],
+    "fabric": "Pure Banarasi Art Silk",
+    "stockStatus": "In Stock",
+    "featured": true,
+    "createdAt": "2026-10-15T10:00:00.000Z"
+  },
+  {
+    "id": "prod_saree_02",
+    "title": "Peacock Teal Kanjeevaram Festive Saree",
+    "category": "sarees",
+    "subCategory": "Kanjeevaram",
+    "price": 3499,
+    "originalPrice": 6299,
+    "discountPercent": 44,
+    "isDiwaliSpecial": true,
+    "tag": "Festive Exclusive",
+    "rating": 5,
+    "reviewsCount": 42,
+    "images": [
+      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=80"
+    ],
+    "description": "Traditional South Indian Kanjeevaram inspired saree featuring dual-tone peacock teal shade with antique gold temple motifs and zari buttis. Includes unstitched heavy brocade blouse piece.",
+    "sizes": [
+      "Free Size (5.5m + 0.8m Blouse)"
+    ],
+    "colors": [
+      "Peacock Teal",
+      "Antique Gold"
+    ],
+    "fabric": "Rich Kanchipuram Silk Blend",
+    "stockStatus": "In Stock",
+    "featured": true,
+    "createdAt": "2026-10-18T10:00:00.000Z"
+  },
+  {
+    "id": "prod_saree_03",
+    "title": "Lustrous Mustard Gold Organza Saree",
+    "category": "sarees",
+    "subCategory": "Organza & Tissue",
+    "price": 2199,
+    "originalPrice": 3899,
+    "discountPercent": 43,
+    "isDiwaliSpecial": true,
+    "tag": "Trending Now",
+    "rating": 4.8,
+    "reviewsCount": 35,
+    "images": [
+      "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=900&q=80"
+    ],
+    "description": "Ultra lightweight sheer organza saree with delicate hand-embroidered scalloped cutwork border in champagne gold zari and soft sequin sheen. Ideal for Diwali night gatherings and parties.",
+    "sizes": [
+      "Free Size (5.5m + 0.8m Blouse)"
+    ],
+    "colors": [
+      "Mustard Gold",
+      "Champagne"
+    ],
+    "fabric": "Premium Organza Silk",
+    "stockStatus": "Few Left",
+    "featured": false,
+    "createdAt": "2026-10-20T10:00:00.000Z"
+  },
+  {
+    "id": "prod_saree_04",
+    "title": "Midnight Emerald Bandhani Georgette Saree",
+    "category": "sarees",
+    "subCategory": "Georgette Bandhani",
+    "price": 2499,
+    "originalPrice": 4200,
+    "discountPercent": 40,
+    "isDiwaliSpecial": false,
+    "tag": "Popular Choice",
+    "rating": 4.7,
+    "reviewsCount": 51,
+    "images": [
+      "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=900&q=80"
+    ],
+    "description": "Flowy pure georgette saree featuring authentic Rajasthani bandhej dot patterns in vibrant emerald green and contrasting crimson border adorned with mirror work lace.",
+    "sizes": [
+      "Free Size (5.5m + 0.8m Blouse)"
+    ],
+    "colors": [
+      "Emerald Green",
+      "Ruby Red"
+    ],
+    "fabric": "Pure Viscose Georgette",
+    "stockStatus": "In Stock",
+    "featured": false,
+    "createdAt": "2026-10-22T10:00:00.000Z"
+  },
+  {
+    "id": "prod_men_01",
+    "title": "Royal Wine Embroidered Silk Kurta Set",
+    "category": "men",
+    "subCategory": "Kurta & Pajama",
+    "price": 1999,
+    "originalPrice": 3499,
+    "discountPercent": 43,
+    "isDiwaliSpecial": true,
+    "tag": "Diwali Top Pick",
+    "rating": 4.9,
+    "reviewsCount": 77,
+    "images": [
+      "https://images.unsplash.com/photo-1597983073493-88cd35cf93b0?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?auto=format&fit=crop&w=900&q=80"
+    ],
+    "description": "Regal men's festive silk blend kurta in deep wine color with delicate resham thread embroidery on the mandarin collar and placket. Comes with comfortable churidar pajama.",
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Wine Maroon",
+      "Off-White Pajama"
+    ],
+    "fabric": "Art Silk Jacquard",
+    "stockStatus": "In Stock",
+    "featured": true,
+    "createdAt": "2026-10-16T10:00:00.000Z"
+  },
+  {
+    "id": "prod_men_02",
+    "title": "Festive Gold Jacquard Mandarin Collar Shirt",
+    "category": "men",
+    "subCategory": "Festive Shirts",
+    "price": 1299,
+    "originalPrice": 2299,
+    "discountPercent": 43,
+    "isDiwaliSpecial": true,
+    "tag": "New Festive Arrival",
+    "rating": 4.8,
+    "reviewsCount": 39,
+    "images": [
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=900&q=80"
+    ],
+    "description": "Contemporary celebration shirt crafted with subtle self-gold jacquard weave, stylish bandhgala collar, and coconut shell buttons. Pairs effortlessly with chinos, trousers, or dhotis.",
+    "sizes": [
+      "38 (S)",
+      "40 (M)",
+      "42 (L)",
+      "44 (XL)"
+    ],
+    "colors": [
+      "Warm Gold",
+      "Ivory"
+    ],
+    "fabric": "Cotton Jacquard Blend",
+    "stockStatus": "In Stock",
+    "featured": false,
+    "createdAt": "2026-10-21T10:00:00.000Z"
+  },
+  {
+    "id": "prod_men_03",
+    "title": "Classic Crimson Linen-Cotton Formal & Casual Shirt",
+    "category": "men",
+    "subCategory": "Men Shirts",
+    "price": 1099,
+    "originalPrice": 1899,
+    "discountPercent": 42,
+    "isDiwaliSpecial": false,
+    "tag": "Everyday Elegance",
+    "rating": 4.6,
+    "reviewsCount": 29,
+    "images": [
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=900&q=80"
+    ],
+    "description": "Breathable premium linen-cotton slim-fit shirt in rich crimson festive tone. Soft washed finish for all-day comfort during festive visits and formal gatherings.",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Crimson",
+      "Navy Blue",
+      "Olive"
+    ],
+    "fabric": "60% Linen, 40% Long-Staple Cotton",
+    "stockStatus": "In Stock",
+    "featured": false,
+    "createdAt": "2026-10-24T10:00:00.000Z"
+  },
+  {
+    "id": "prod_men_04",
+    "title": "Emerald Green Raw Silk Kurta with Chinos Pant Set",
+    "category": "men",
+    "subCategory": "Kurta & Pants",
+    "price": 2299,
+    "originalPrice": 3999,
+    "discountPercent": 42,
+    "isDiwaliSpecial": true,
+    "tag": "Trending Style",
+    "rating": 4.9,
+    "reviewsCount": 54,
+    "images": [
+      "https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=900&q=80"
+    ],
+    "description": "Luxe textured raw silk festive short kurta paired with matching tailored ethnic straight pants. Sophisticated minimalist design with antique brass metallic buttons.",
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Emerald Green",
+      "Sand Beige Pants"
+    ],
+    "fabric": "Raw Matka Silk",
+    "stockStatus": "Few Left",
+    "featured": true,
+    "createdAt": "2026-10-25T10:00:00.000Z"
+  },
+  {
+    "id": "prod_kids_01",
+    "title": "Boys Royal Blue Festive Kurta & Pant Set with Brocade Vest",
+    "category": "kids",
+    "subCategory": "Boys Ethnic Sets",
+    "price": 1499,
+    "originalPrice": 2599,
+    "discountPercent": 42,
+    "isDiwaliSpecial": true,
+    "tag": "Diwali Kids Special",
+    "rating": 4.9,
+    "reviewsCount": 63,
+    "images": [
+      "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=900&q=80"
+    ],
+    "description": "Adorable 3-piece ethnic celebration set for boys: Royal blue soft silk kurta, comfortable elasticated straight pants, and a shimmering gold brocade sleeveless jacket.",
+    "sizes": [
+      "2-3 Yrs",
+      "4-5 Yrs",
+      "6-7 Yrs",
+      "8-9 Yrs",
+      "10-12 Yrs"
+    ],
+    "colors": [
+      "Royal Blue & Gold"
+    ],
+    "fabric": "Soft Cotton Silk (Kids Sensitive Skin Friendly)",
+    "stockStatus": "In Stock",
+    "featured": true,
+    "createdAt": "2026-10-19T10:00:00.000Z"
+  },
+  {
+    "id": "prod_kids_02",
+    "title": "Boys Smart Festive Printed Shirt & Cotton Pants Set",
+    "category": "kids",
+    "subCategory": "Boys Shirts & Pants",
+    "price": 999,
+    "originalPrice": 1699,
+    "discountPercent": 41,
+    "isDiwaliSpecial": true,
+    "tag": "Value Pack",
+    "rating": 4.7,
+    "reviewsCount": 38,
+    "images": [
+      "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=900&q=80"
+    ],
+    "description": "Bright and joyful festive printed half-sleeve shirt paired with stretchable chinos pants. Equipped with an adjustable inner waistband for maximum playtime flexibility.",
+    "sizes": [
+      "3-4 Yrs",
+      "5-6 Yrs",
+      "7-8 Yrs",
+      "9-10 Yrs"
+    ],
+    "colors": [
+      "Mustard Yellow",
+      "Khaki Pants"
+    ],
+    "fabric": "100% Breathable Combed Cotton",
+    "stockStatus": "In Stock",
+    "featured": false,
+    "createdAt": "2026-10-23T10:00:00.000Z"
+  },
+  {
+    "id": "prod_kids_03",
+    "title": "Girls Golden Yellow & Pink Festive Lehenga Choli",
+    "category": "kids",
+    "subCategory": "Girls Ethnic Wear",
+    "price": 1699,
+    "originalPrice": 2999,
+    "discountPercent": 43,
+    "isDiwaliSpecial": true,
+    "tag": "Most Loved",
+    "rating": 5,
+    "reviewsCount": 81,
+    "images": [
+      "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=900&q=80"
+    ],
+    "description": "Sparkling festive ready-to-wear lehenga choli set with soft crepe lining. Featuring gota patti border, cute tassel latkans, and matching net dupatta for your little princess.",
+    "sizes": [
+      "2-3 Yrs",
+      "4-5 Yrs",
+      "6-7 Yrs",
+      "8-9 Yrs",
+      "10-12 Yrs"
+    ],
+    "colors": [
+      "Festive Yellow",
+      "Rani Pink"
+    ],
+    "fabric": "Silk Chanderi with Cotton Lining",
+    "stockStatus": "In Stock",
+    "featured": true,
+    "createdAt": "2026-10-17T10:00:00.000Z"
+  },
+  {
+    "id": "prod_kids_04",
+    "title": "Girls Ruby Red Brocade Anarkali Festive Frock",
+    "category": "kids",
+    "subCategory": "Girls Frocks & Ethnic",
+    "price": 1299,
+    "originalPrice": 2199,
+    "discountPercent": 41,
+    "isDiwaliSpecial": true,
+    "tag": "Festive Cute",
+    "rating": 4.8,
+    "reviewsCount": 44,
+    "images": [
+      "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?auto=format&fit=crop&w=900&q=80"
+    ],
+    "description": "Diwali red tiered frock dress with gold foil block prints and soft ruffle accents. Designed without scratchy tags for happy, comfortable festive fun.",
+    "sizes": [
+      "1-2 Yrs",
+      "3-4 Yrs",
+      "5-6 Yrs",
+      "7-8 Yrs"
+    ],
+    "colors": [
+      "Ruby Red",
+      "Gold Foil"
+    ],
+    "fabric": "Soft Modal Silk with Cotton Inner",
+    "stockStatus": "In Stock",
+    "featured": false,
+    "createdAt": "2026-10-26T10:00:00.000Z"
+  }
+]

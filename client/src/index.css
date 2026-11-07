@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* ==========================================
+   MARATHI DEVANAGARI TRENDING FONT SYSTEM
+   Yatra One (Display) + Baloo 2 (Body) + Tiro Devanagari Marathi (Headings)
+   ========================================== */
+@layer base {
+  html, body {
+    font-family: 'Baloo 2', 'Noto Serif Devanagari', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3 {
+    font-family: 'Tiro Devanagari Marathi', 'Yatra One', serif;
+    font-feature-settings: "kern" 1;
+  }
+  p, span, label, button, input, select, textarea, li, a {
+    font-family: 'Baloo 2', system-ui, sans-serif;
+  }
+}
+
+.font-kalam  { font-family: 'Kalam', cursive, system-ui, sans-serif !important; }
+.font-rozha  { font-family: 'Rozha One', 'Tiro Devanagari Marathi', serif !important; }
+.font-main-brand { font-family: 'Rozha One', 'Tiro Devanagari Marathi', serif !important; letter-spacing: 0.03em; }
+.font-yatra  { font-family: 'Yatra One', 'Tiro Devanagari Marathi', serif !important; }
+.font-tiro   { font-family: 'Tiro Devanagari Marathi', 'Noto Serif Devanagari', serif !important; }
+.font-baloo  { font-family: 'Baloo 2', system-ui, sans-serif !important; }
+.font-noto   { font-family: 'Noto Serif Devanagari', serif !important; }
+
+/* ==========================================
+   MARQUEE ANIMATION — top announcement bar
+   ========================================== */
+@keyframes marquee-scroll {
+  0%   { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee-scroll 28s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+.marquee-wrap {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* ==========================================
+   FESTIVE DIWALI ANIMATIONS
+   ========================================== */
+@keyframes flicker {
+  0%, 100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 10px rgba(251,191,36,0.9)); }
+  30%       { opacity: 0.78; transform: scale(0.95) rotate(-1deg); filter: drop-shadow(0 0 4px rgba(245,158,11,0.6)); }
+  70%       { opacity: 0.90; transform: scale(0.98) rotate(1deg); filter: drop-shadow(0 0 8px rgba(251,191,36,0.75)); }
+}
+@keyframes goldShine {
+  0%   { background-position: -300% 0; }
+  100% { background-position: 300% 0; }
+}
+@keyframes diyas-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(245,158,11,0.4), 0 0 25px rgba(245,158,11,0.15); }
+  50%       { box-shadow: 0 0 22px rgba(245,158,11,0.75), 0 0 50px rgba(245,158,11,0.30); }
+}
+@keyframes float-up {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.diya-flame  { animation: flicker 2.2s infinite ease-in-out; display: inline-block; }
+.float-slow  { animation: float-up 5s ease-in-out infinite; }
+.fade-in-up  { animation: fadeInUp 0.4s ease both; }
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFE29F 0%, #FFB347 35%, #FFAE34 60%, #EDC967 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.rangoli-gold-text {
+  background: linear-gradient(90deg, #d4af37 0%, #fff8dc 25%, #f5a623 50%, #fff8dc 75%, #d4af37 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  animation: goldShine 3.5s linear infinite;
+}
+.gold-border       { border: 1px solid rgba(212,175,55,0.35); }
+.gold-border-glow  { border: 1px solid rgba(212,175,55,0.5); box-shadow: 0 0 18px rgba(212,175,55,0.18); }
+.diya-glow         { animation: diyas-glow 2.5s ease-in-out infinite; }
+.card-glow-hover   { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+.card-glow-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px -12px rgba(245,158,11,0.28), 0 0 0 1px rgba(245,158,11,0.45);
+}
+
+/* Marathi Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #100e1a; }
+::-webkit-scrollbar-thumb { background: #3c2a1a; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #d4af37; }
+
+* { font-feature-settings: "kern" 1, "liga" 1; text-rendering: optimizeLegibility; }
