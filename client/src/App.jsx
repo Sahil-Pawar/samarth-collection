@@ -14,6 +14,7 @@ import AdminModal from './components/AdminModal';
 import MobileBottomNav from './components/MobileBottomNav';
 import ProductDetailPage from './components/ProductDetailPage';
 import AdminPage from './pages/AdminPage';
+import WelcomeModal from './components/WelcomeModal';
 
 /* ── Shell ── wraps all pages with common navbar, drawers, footer */
 function Shell({ children }) {
@@ -31,6 +32,7 @@ function Shell({ children }) {
       <Footer />
 
       {/* Global Drawers & Modals */}
+      <WelcomeModal />
       <CartDrawer />
       <WishlistDrawer />
       <AdminModal />

@@ -33,6 +33,13 @@ export function StoreProvider({ children }) {
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
+  const [isWelcomeOpen, setIsWelcomeOpen] = useState(() => {
+    try {
+      return !sessionStorage.getItem('samarth_welcomed');
+    } catch {
+      return true;
+    }
+  });
   const [adminPin, setAdminPin] = useState(() => {
     try {
       return localStorage.getItem('samarth_admin_pin') || '';
@@ -529,6 +536,8 @@ export function StoreProvider({ children }) {
       setIsAdminOpen,
       isAdminLoggedIn,
       setIsAdminLoggedIn,
+      isWelcomeOpen,
+      setIsWelcomeOpen,
       isDiwaliSparksActive,
       setIsDiwaliSparksActive,
       triggerFestiveCelebration,
